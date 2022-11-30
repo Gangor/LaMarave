@@ -12,7 +12,7 @@ namespace ALaMarave.Randoms
         public CombatantType GetStarter()
         {
             int result = rdm.Next(1, 101);
-            if(result > 50)
+            if(result < 65)
             {
                 return CombatantType.HERO;
             }

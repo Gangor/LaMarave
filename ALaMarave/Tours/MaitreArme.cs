@@ -9,17 +9,25 @@ namespace ALaMarave.Tours
 
         IInsulteFactory MaitreArmeInsolent = new InsulteFactory();
    
-        public void JouerTour(IHero adversaire)
+        public void JouerTour(IHero hero)
         {
-            Console.WriteLine("JEU : Tu viens de tomber sur le grand Maitre d'armes ! Félicitation tu viens de level up !\n");
+            Console.WriteLine("JEU : Tu viens de tomber sur le grand Maitre d'armes ! Félicitation tu viens de level up !");
             //TODO : MaitreArmeInsolent.creerInsulte();
-            adversaire.level++;
-            //TODO : repartirPoints();
+            hero.level++;
+            give10pctPv(hero);
+            //TODO : repartirPoints(hero);
+
         }
 
-        private void repartirPoints()
+        private void repartirPoints(IHero hero)
         {
             throw new NotImplementedException();
+        }
+
+        private void give10pctPv(IHero hero)
+        {
+            Console.WriteLine("JEU : +10% Pv\n");
+            hero.Pv += Convert.ToInt32(0.1 * hero.Pv);
         }
     }
 }
