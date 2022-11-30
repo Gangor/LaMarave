@@ -2,6 +2,6 @@
 {
     public interface IInsulteFactory
     {
-        void creerInsulte();
+        string creerInsulte();
     }
 }

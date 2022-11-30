@@ -24,6 +24,10 @@ using Factories;
                 tours.Enqueue(tour);
                 tour.JouerTour((IHero)hero);
             }
+            if (tours.Count == 20 && hero.isAlive())
+            {
+                Console.WriteLine("JEU : C'est gagné !!! GG à toi");
+            }
             
             
         }

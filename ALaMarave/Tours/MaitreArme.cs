@@ -11,17 +11,41 @@ namespace ALaMarave.Tours
    
         public void JouerTour(IHero hero)
         {
-            Console.WriteLine("JEU : Tu viens de tomber sur le grand Maitre d'armes ! Félicitation tu viens de level up !");
-            //TODO : MaitreArmeInsolent.creerInsulte();
+            Console.WriteLine("JEU : Tu viens de tomber sur le grand Maitre d'armes ! ");
+            Console.WriteLine(MaitreArmeInsolent.creerInsulte());
             hero.level++;
+            Console.WriteLine("Félicitation, tu viens de level up !");
             give10pctPv(hero);
-            //TODO : repartirPoints(hero);
+            repartirPoints(hero);
 
         }
 
         private void repartirPoints(IHero hero)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Vous avez 3 points à répartir selon votre convenance");
+
+            int pv;
+            int force;
+            int armure;
+            do
+            {
+                Console.WriteLine("Nombre de Pv :");
+                pv = Convert.ToInt32(Console.ReadLine());
+            } while (pv > 3);
+            do
+            {
+                Console.WriteLine("Nombre de force :");
+                force = Convert.ToInt32(Console.ReadLine());
+            } while (pv + force > 3);
+            do
+            {
+                Console.WriteLine("Nombre d'armure :");
+                armure = Convert.ToInt32(Console.ReadLine());
+            } while (pv + armure + force > 3);
+
+            hero.Pv += pv;
+            hero.Force += force;
+            hero.Armure += armure;
         }
 
         private void give10pctPv(IHero hero)
