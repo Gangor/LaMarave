@@ -5,8 +5,8 @@ namespace ALaMarave.Combatants
         int Pv { get; set; }
         int Armure { get; set; }
         int Force { get; set; }
-        int MaxPv { get; set; }
 
-        public void Attaque();
+        public void Attaque(ICombatant adversaire);
+        bool isAlive();
     }
 }

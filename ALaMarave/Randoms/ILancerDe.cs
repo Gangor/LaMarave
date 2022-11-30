@@ -2,6 +2,6 @@ namespace ALaMarave.Randoms
 {
     public interface ILancerDe
     {
-        int lancerDe();
+        public int LanceDe();
     }
 }

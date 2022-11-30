@@ -1,12 +1,25 @@
+using ALaMarave.Randoms;
 using ALaMarave.Tours;
 
 namespace ALaMarave.Factories
 {
-    public static class TourFactory
+    public class TourFactory : ITourFactory
     {
-        public static ITour CreeTour(TourType type)
+
+        public ITour CreeTour(TourType type)
         {
-            throw new System.NotImplementedException();
+            switch (type)
+            {
+                case TourType.REGENERATION:
+                    return new Merlin();
+                case TourType.ENTRAINEMENT:
+                    return new MaitreArme();
+                case TourType.MAROUFLE:
+                    return new Combat();
+                default:
+                    throw new System.InvalidOperationException();
+            }
+                
         }
     }
 }
