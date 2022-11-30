@@ -1,15 +1,47 @@
+using System;
+using ALaMarave.Combatants;
+using ALaMarave.Tours;
+
 namespace ALaMarave.Randoms
 {
-    public class Randomiser
+    public class Randomiser : ILancerDe, IObtentionPourcentage
     {
-        public int lancerDee()
+
+        Random rdm = new Random();
+
+        public CombatantType GetStarter()
         {
-            throw new System.NotImplementedException();
+            int result = rdm.Next(1, 101);
+            if(result > 50)
+            {
+                return CombatantType.HERO;
+            }
+            else
+            {
+                return CombatantType.MOB;
+            }
         }
 
-        public int lancerPourcentage()
+        public TourType GetTypeOfTour()
         {
-            throw new System.NotImplementedException();
+            int result = rdm.Next(1, 101);
+            if(result <= 25)
+            {
+                return TourType.REGENERATION;
+            }else if (result > 25 && result <= 50)
+            {
+                return TourType.ENTRAINEMENT;
+            }
+            else
+            {
+                return TourType.MAROUFLE;
+            }
         }
+
+        public int LanceDe()
+        {
+            return rdm.Next(1, 13);
+        }
+
     }
 }

@@ -6,7 +6,9 @@ namespace ALaMarave
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("La partie commence !");
+            Partie mainPartie = new Partie();
+            mainPartie.Start();
         }
     }
 }
